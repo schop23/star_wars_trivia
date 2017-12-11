@@ -12,7 +12,7 @@
         <h1>Trivia from a Galaxy Far, Far Away...</h1>
     </header>
     <section class=score></section>
-    <form>
+    <form class="trivia" onsubmit="return submitAnswers()">
      <ol>
         <li>
             <h3>What was Anakin Skywalker’s mother’s name?</h3>
@@ -155,6 +155,7 @@
              <input type="radio" name="question19" value="D">Gold Four<br>
         </li>
      </ol>
+     <button type="submit">Submit Answers</button>
     </form>
    
     <script src="script.js"></script>
