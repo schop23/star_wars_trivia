@@ -1,3 +1,9 @@
+//accessing the div that is the playing area for trivia
+let playingArea = $(".playingArea")
+//make an array for what the player picks
+let selectedAnswer = []
+//how to keep track of what the question number the player is on
+let questionNumber = 0
 // making up the questions
 function () {
     let questions = [{
@@ -41,21 +47,48 @@ function () {
         options: ["FN-2187", "FN-3211", "FN-1138", "FN-1764"],
         rightAnswer: "FN-2187"
     }]
-
-    //accessing the div that is the playing area for trivia
-    let playingArea = $(".playingArea")
-    //make an array for what the player picks
-    let selectedAnswer = []
-    //how to keep track of what the question number the player is on
-    let questionNumber = 0
-    //bringing up the first question
+    //bringing up the questions
     nextQuestion();
 
     //function for the next button
     $(".next").on("click", function(event) {
         event.preventDefault()
-    })
-    //the player makes a guess
+        //stops click event if the questions is still fading
+        if(playingArea.is(":animated")) {
+            return false;
+        }
+        //the player makes a guess
     playerGuess();
+    nextQuestion();
+    })
+    //putting the questions and answers on the page
+    function questionElement(index) {
+        let quesEl = $("<div>", {
+            id: "question"
+        })
+    
+        let question = $("<h3>"(index + 1) + ": ").append(questions[index].question)
+        quesEl.append(question)
 
+        let radioButtons = createRadioButtons(index)
+        quesEl.append(radioButtons)
+
+        return quesEl
+    }
+    //set up the radio buttons with the players answer options instead of doing ol and li in html
+    function createRadioButtons(index) {
+        let radioList = $("<ul>")
+        let item
+        let input = ""
+        for (var i = 0; i < questions[index].options.length; i++) {
+            item = $("<li>")
+            input = "<input type='radio' name='answer' value=" + i + " />"
+            item.append(input)
+            radioList.append(item)
+        }
+        return radioList
+    }
+    
+    
 }
+// fade effects animation, click events, organization based on: Gary Carino https://codepen.io/gcarino/pen/LDgtn?editors=0010#0 
