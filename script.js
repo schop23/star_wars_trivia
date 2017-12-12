@@ -24,5 +24,21 @@ function () {
         question: "The Force Awakens is set how many years after Return of the Jedi?",
         options: ["30", "25", "17", "40"],
         rightAnswer: "30"
+    }, {
+        question: "Who was the first owner, based on the films, of the Millennium Falcon?",
+        options: ["Chewbacca", "Lando Calrissian", "Han Solo", "Jabba the Hutt"],
+        rightAnswer: "Lando Calrissian"
+    }, {
+        question: "Who did Luke seek out on Dagobah for training?",
+        options: ["Obi-Wan Kenobi", "Han Solo", "Yoda", "Mace Windu"],
+        rightAnswer: "Yoda"
+    }, {
+        question: "What planet did Obi-Wan Kenobi go to battle, and ultimately kill, General Grievous?",
+        options: ["Naboo", "Utapau", "Mustafar", "Geonosis"],
+        rightAnswer: "Utapau"
+    }, {
+        question: "What was Finn’s First Order Stormtrooper designation number?",
+        options: ["FN-2187", "FN-3211", "FN-1138", "FN-1764"],
+        rightAnswer: "FN-2187"
     }]
 }
