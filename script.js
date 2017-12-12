@@ -41,4 +41,21 @@ function () {
         options: ["FN-2187", "FN-3211", "FN-1138", "FN-1764"],
         rightAnswer: "FN-2187"
     }]
+
+    //accessing the div that is the playing area for trivia
+    let playingArea = $(".playingArea")
+    //make an array for what the player picks
+    let selectedAnswer = []
+    //how to keep track of what the question number the player is on
+    let questionNumber = 0
+    //bringing up the first question
+    nextQuestion();
+
+    //function for the next button
+    $(".next").on("click", function(event) {
+        event.preventDefault()
+    })
+    //the player makes a guess
+    playerGuess();
+
 }
