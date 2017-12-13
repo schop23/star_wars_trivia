@@ -1,5 +1,5 @@
 // setting up needed variables
-var quesNum = 0, 
+var quesNum = 0
 var testQues 
 var progress 
 var question
@@ -28,3 +28,20 @@ function elById (x) {
     return document.getElementById(x)
 }
 //getting the questions to show up on the screen
+function askQuestions () {
+    testQues = elById('testQues')
+    // lets player know what question they are on
+    elById("progress").innerHTML = 'Question' + (quesNum + 1) + ' of ' + questions.length
+    // getting the questions and options by pulling them out of the arrays
+    question = questions[quesNum][0]
+    optA = questions[quesNum][1]
+    optB = questions[quesNum][2]
+    optC = questions[quesNum][3]
+    optD = questions[quesNum][4]
+    testQues.innerHTML = '<h3>' + question + '</h3>'
+    testQues.innerHTML += "<input type='radio' name='options' value='A'> " + optA + '<br>'
+    testQues.innerHTML += "<input type='radio' name='options' value='B'> " + optB + '<br>'
+    testQues.innerHTML += "<input type='radio' name='options' value='C'> " + optC + '<br>'
+    testQues.innerHTML += "<input type='radio' name='options' value='D'> " + optD + '<br><br>'
+    testQues.innerHTML += "<button onClick='checkAnswer()'>Submit</button>"
+}
