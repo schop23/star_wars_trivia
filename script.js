@@ -29,9 +29,9 @@ function elById (x) {
 }
 //getting the questions to show up on the screen
 function askQuestions () {
-    testQues = elById('testQues')
+    testQues = elById('trivia')
     // lets player know what question they are on
-    elById("progress").innerHTML = 'Question' + (quesNum + 1) + ' of ' + questions.length
+    elById("progress").innerHTML = 'Question ' + (quesNum + 1) + ' of ' + questions.length
     // getting the questions and options by pulling them out of the arrays
     question = questions[quesNum][0]
     optA = questions[quesNum][1]
@@ -45,3 +45,19 @@ function askQuestions () {
     testQues.innerHTML += "<input type='radio' name='options' value='D'> " + optD + '<br><br>'
     testQues.innerHTML += "<button onClick='checkAnswer()'>Submit</button>"
 }
+// checking the answer the player gives
+function checkAnswer () {
+    options = document.getElementsByName('options')
+    for (var i=0; i < options.length; i++) {
+        if (options[i].checked) {
+            option = options[i].value
+        }
+    }
+    //checking for the right answer and keeping track of it
+    if (options === questions[quesNum][5]) {
+        rightAnswer++
+    }
+    //go to the next question
+    quesNum++
+}
+window.addEventListener ('load', askQuestions(), false)
