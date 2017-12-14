@@ -8,7 +8,7 @@ This is a 10 questions, multiple choice, trivia game that is focused on the the 
 
 ## Brief Example 
 This is a screen shot of the game in the Chrome browser:
-star_wars_trivia/screen_shot.png
+https://github.com/schop23/star_wars_trivia/blob/master/screen_shot.png?raw=true
 
 ## List of Features
 This game in its current state is in the Bronze category. Each question is on its own page and at the end there is functionality to tally the number of correct answers out of 10.  I would like to, in the future, add a reset button and animation for question transition that mimics the word crawl in the opening sequence of every Star Wars movie.
