@@ -45,7 +45,7 @@ function askQuestions () {
     optC = questions[quesNum][3]
     optD = questions[quesNum][4]
     testQues.innerHTML = '<h3>' + question + '</h3>'
-    testQues.innerHTML += "<input type='radio' name='options' value='A'> " + optA + '<br>'
+    testQues.innerHTML += "<input type='radio' name='options' value='A'>" + optA + '<br>'
     testQues.innerHTML += "<input type='radio' name='options' value='B'> " + optB + '<br>'
     testQues.innerHTML += "<input type='radio' name='options' value='C'> " + optC + '<br>'
     testQues.innerHTML += "<input type='radio' name='options' value='D'> " + optD + '<br><br>'
