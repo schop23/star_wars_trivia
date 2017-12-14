@@ -30,7 +30,7 @@ function elById (x) {
 //getting the questions to show up on the screen
 function askQuestions () {
     testQues = elById('trivia')
-    //lets player know how many questions they got right
+    //lets player know how many questions they got right and a false return to stop the game
     if (quesNum >= questions.length) {
         testQues.innerHTML = '<h2>You answered ' + rightAnswer + ' of ' + questions.length + ' questions correctly.</h2>'
         elById('progress').innerHTML = 'Thanks for playing!'
@@ -38,7 +38,7 @@ function askQuestions () {
     }
     // lets player know what question they are on
     elById('progress').innerHTML = 'Question ' + (quesNum + 1) + ' of ' + questions.length
-    // getting the questions and options by pulling them out of the arrays
+    // getting the questions and options by pulling them out of the arrays and adding the radio buttons
     question = questions[quesNum][0]
     optA = questions[quesNum][1]
     optB = questions[quesNum][2]
