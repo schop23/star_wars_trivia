@@ -10,7 +10,7 @@ var optC
 var optD 
 var options
 var rightAnswer = 0
-//typing questions and answers into arrays
+//typing questions and answers into arrays to access by indexes later
 var questions = [
     ['What was Anakin Skywalker’s mother’s name?', 'Alura', 'Shmi', 'Beru', 'Hera', 'B'],
     ['Who kills Jabba the Hutt?', 'Leia Organa', 'C-3PO', 'Han Solo', 'Luke Skywalker', 'A'],
