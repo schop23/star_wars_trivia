@@ -1,16 +1,16 @@
 // setting up needed variables
 var quesNum = 0
-var testQues 
-var progress 
+var testQues
+var progress
 var question
 var option
-var optA 
-var optB 
+var optA
+var optB
 var optC
-var optD 
+var optD
 var options
 var rightAnswer = 0
-//typing questions and answers into arrays to access by indexes later
+// typing questions and answers into arrays to access by indexes later
 var questions = [
     ['What was Anakin Skywalker’s mother’s name?', 'Alura', 'Shmi', 'Beru', 'Hera', 'B'],
     ['Who kills Jabba the Hutt?', 'Leia Organa', 'C-3PO', 'Han Solo', 'Luke Skywalker', 'A'],
@@ -25,46 +25,46 @@ var questions = [
 ]
 // function to return element by ID
 function elById (x) {
-    return document.getElementById(x)
+  return document.getElementById(x)
 }
-//getting the questions to show up on the screen
+// getting the questions to show up on the screen
 function askQuestions () {
-    testQues = elById('trivia')
-    //lets player know how many questions they got right and a false return to stop the game
-    if (quesNum >= questions.length) {
-        testQues.innerHTML = '<h2>You answered ' + rightAnswer + ' of ' + questions.length + ' questions correctly.</h2>'
-        elById('progress').innerHTML = 'Thanks for playing!'
-        return false
-    }
+  testQues = elById('trivia')
+    // lets player know how many questions they got right and a false return to stop the game
+  if (quesNum >= questions.length) {
+    testQues.innerHTML = '<h2>You answered ' + rightAnswer + ' of ' + questions.length + ' questions correctly.</h2>'
+    elById('progress').innerHTML = 'Thanks for playing!'
+    return false
+  }
     // lets player know what question they are on
-    elById('progress').innerHTML = 'Question ' + (quesNum + 1) + ' of ' + questions.length
+  elById('progress').innerHTML = 'Question ' + (quesNum + 1) + ' of ' + questions.length
     // getting the questions and options by pulling them out of the arrays and adding the radio buttons
-    question = questions[quesNum][0]
-    optA = questions[quesNum][1]
-    optB = questions[quesNum][2]
-    optC = questions[quesNum][3]
-    optD = questions[quesNum][4]
-    testQues.innerHTML = '<h3>' + question + '</h3>'
-    testQues.innerHTML += "<input type='radio' name='options' value='A'>" + optA + '<br>'
-    testQues.innerHTML += "<input type='radio' name='options' value='B'> " + optB + '<br>'
-    testQues.innerHTML += "<input type='radio' name='options' value='C'> " + optC + '<br>'
-    testQues.innerHTML += "<input type='radio' name='options' value='D'> " + optD + '<br><br>'
-    testQues.innerHTML += "<button onClick='checkAnswer()'>Submit</button>"
+  question = questions[quesNum][0]
+  optA = questions[quesNum][1]
+  optB = questions[quesNum][2]
+  optC = questions[quesNum][3]
+  optD = questions[quesNum][4]
+  testQues.innerHTML = '<h3>' + question + '</h3>'
+  testQues.innerHTML += "<input type='radio' name='options' value='A'>" + optA + '<br>'
+  testQues.innerHTML += "<input type='radio' name='options' value='B'> " + optB + '<br>'
+  testQues.innerHTML += "<input type='radio' name='options' value='C'> " + optC + '<br>'
+  testQues.innerHTML += "<input type='radio' name='options' value='D'> " + optD + '<br><br>'
+  testQues.innerHTML += "<button onClick='checkAnswer()'>Submit</button>"
 }
 // checking the answer the player gives
 function checkAnswer () {
-    options = document.getElementsByName('options')
-    for (var i=0; i < options.length; i++) {
-        if (options[i].checked) {
-            option = options[i].value
-        }
+  options = document.getElementsByName('options')
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+      option = options[i].value
     }
-    //checking for the right answer and keeping track of it
-    if (option === questions[quesNum][5]) {
-        rightAnswer++
-    }
-    //go to the next question when askQuestions function is ran again
-    quesNum++
-    askQuestions()
+  }
+    // checking for the right answer and keeping track of it
+  if (option === questions[quesNum][5]) {
+    rightAnswer++
+  }
+    // go to the next question when askQuestions function is ran again
+  quesNum++
+  askQuestions()
 }
-window.addEventListener ('load', askQuestions(), false)
+window.addEventListener('load', askQuestions(), false)
